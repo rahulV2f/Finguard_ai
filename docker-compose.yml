@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: finguard-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: finguard_user
+      POSTGRES_PASSWORD: finguard_pass
+      POSTGRES_DB: finguard_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: finguard-backend
+    restart: always
+    environment:
+      DATABASE_URL: postgresql://finguard_user:finguard_pass@postgres:5432/finguard_db
+      SECRET_KEY: finguard-production-compose-key-xyz987
+      MODEL_DIR: /app/ml_pipeline/models
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: finguard-frontend
+    restart: always
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

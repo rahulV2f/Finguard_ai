@@ -1,0 +1,78 @@
+{
+  "model_name": "FinGuard Random Forest Classifier",
+  "model_version": "1.0.0",
+  "algorithm": "Balanced Random Forest (120 Estimators, max_depth=9)",
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "pr_auc": 1.0,
+  "roc_auc": 1.0,
+  "decision_threshold": 0.48,
+  "confusion_matrix": {
+    "true_negatives": 81,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "true_positives": 19
+  },
+  "class_distribution": {
+    "legitimate_samples": 81,
+    "fraud_samples": 19
+  },
+  "feature_importances": [
+    {
+      "feature": "ip_risk_score",
+      "importance": 0.244
+    },
+    {
+      "feature": "amount_to_hist_ratio",
+      "importance": 0.2242
+    },
+    {
+      "feature": "distance_from_home_km",
+      "importance": 0.1741
+    },
+    {
+      "feature": "historical_velocity_1h",
+      "importance": 0.1203
+    },
+    {
+      "feature": "amount",
+      "importance": 0.0881
+    },
+    {
+      "feature": "failed_attempts_count",
+      "importance": 0.0722
+    },
+    {
+      "feature": "merchant_risk_weight",
+      "importance": 0.0701
+    },
+    {
+      "feature": "is_cross_border",
+      "importance": 0.0047
+    },
+    {
+      "feature": "historical_amount_avg",
+      "importance": 0.0012
+    },
+    {
+      "feature": "hour_of_day",
+      "importance": 0.0008
+    },
+    {
+      "feature": "channel_risk_weight",
+      "importance": 0.0002
+    },
+    {
+      "feature": "is_weekend",
+      "importance": 0.0001
+    },
+    {
+      "feature": "is_night",
+      "importance": 0.0
+    }
+  ],
+  "test_samples_count": 100,
+  "trained_at": "2026-10-28T09:08:49.895586"
+}
