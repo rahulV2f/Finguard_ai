@@ -44,3 +44,4 @@ def test_rule_impossible_travel():
     )
     assert "RULE_IMPOSSIBLE_TRAVEL_DISTANCE" in res["matched_rules"]
     assert "RULE_CROSS_BORDER_FOREIGN_TRANSACTION" in res["matched_rules"]
+

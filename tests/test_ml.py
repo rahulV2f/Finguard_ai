@@ -27,3 +27,4 @@ def test_ml_pipeline_train_and_predict():
     assert 0 <= res["risk_score"] <= 100
     assert res["is_flagged"] is True
     assert len(res["reasons"]) > 0
+

@@ -34,3 +34,4 @@ def test_synthetic_data_generation(db):
     for t in txns:
         assert 0 <= t.risk_score <= 100
         assert t.risk_category in [RiskCategory.LOW, RiskCategory.MEDIUM, RiskCategory.HIGH, RiskCategory.CRITICAL]
+

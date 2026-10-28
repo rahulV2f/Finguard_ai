@@ -137,3 +137,4 @@ docker-compose up --build -d
 
 ## License
 MIT License. Developed for technical demonstration and portfolio evaluation.
+
